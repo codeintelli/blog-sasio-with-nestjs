@@ -49,29 +49,10 @@ return this.responseService.sendErrorResponse(res, err, 'wrong credentials');
 return this.responseService.sendErrorResponse(res, err, 'empty field');
 ```
 
-# Templates for Email Sending(Webhooks Testings     )
+# Templates for Email Sending(Webhooks Testings )
 
 - Deactivate Account Email
 - Login Account email
 - Reset Password Email
 - Verify Email Using Link
 - Successfully Register User Email
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
