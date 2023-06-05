@@ -6,7 +6,6 @@ import { DatabaseModule } from './Database/database.module';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { ConfigModule } from '@nestjs/config';
-// import { CloudinaryService } from './helper/cloudinary.service';
 import { AuthModule } from './Modules/auth/auth.module';
 import { UserModule } from './Modules/user/user.module';
 import { CommonModule } from './common/common.module';

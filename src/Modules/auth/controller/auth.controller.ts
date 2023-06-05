@@ -1,12 +1,10 @@
 
-import { Body, Controller, Param, Query, Req, Res, Get, Post, Put, Patch, Delete, HttpStatus, HttpException, UseGuards, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { Body, Controller, Param, Req, Res, Get, Post, HttpStatus, HttpException, UseGuards } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { ResponseHandlerService } from 'src/common/services/responseHandler.service';
 import { IsAuthenticated } from 'src/Modules/auth/jwt-guard';
-import { registerUserDtos, checkLoginUserData, changePasswordDTO, resetPasswordDTO } from '../dtos/user.dtos';
+import { registerUserDtos, checkLoginUserData, resetPasswordDTO } from '../dtos/user.dtos';
 import { AuthService } from '../services/auth.service';
-import { RequestInterface } from '../interface/user.interface';
-import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('auth')
 export class AuthController {

@@ -45,13 +45,13 @@ export class AuthService {
 
     public async loginUser(userEmail, UserPassword) {
         let loginData = await this.userModel.findOne({ email: userEmail }).select('+password');
-        if (loginData.isActive === false) {
-            throw new BadRequestException("user can't actvie please send email");
-
-        }
         if (!loginData) {
             throw new Error(this.message.invalidCred);
         }
+        if (loginData.isActive === false) {
+            throw new BadRequestException("user can't actvie please send email");
+        }
+
         let isPasswordMatched = await this.passwordService.verifyPassword(UserPassword, loginData.password);
         if (!isPasswordMatched) {
             throw new BadRequestException(this.message.invalidCred);

@@ -1,13 +1,10 @@
 import { Injectable, HttpException, HttpStatus, BadRequestException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { ResponseHandlerService } from 'src/common/services/responseHandler.service';
-import { JwtAuthService } from '../../../common/services/jwt.service';
 import { ContextService } from '../../../common/services/context.service';
 import { AwsService } from '../../../common/services/aws.service';
 import { Attachment } from 'src/Models/attachment.schema';
 import { userDocument } from 'src/Models/user.schema';
-import { MailService } from 'src/common/services/mail.service';
 import { PasswordService } from '../../../common/services/password.service';
 
 @Injectable()
@@ -15,11 +12,8 @@ export class UserService {
     constructor(
         @InjectModel('User') private readonly userModel: Model<userDocument>,
         @InjectModel('Attachment') private readonly attachmentModel: Model<Attachment>,
-        private readonly responseService: ResponseHandlerService,
-        private readonly jwtService: JwtAuthService,
         private readonly message: ContextService,
         private readonly awsService: AwsService,
-        private readonly mailService: MailService,
         private readonly passwordService: PasswordService
     ) {
 

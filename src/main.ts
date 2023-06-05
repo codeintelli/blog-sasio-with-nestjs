@@ -30,7 +30,7 @@ async function bootstrap() {
   // @Middleware excepton filter like middleware
   app.useGlobalFilters(new AllExceptionsFilter);
   app.enableCors({
-    origin: 'http://localhost:2030',
+    origin: 'http://localhost:2029',
     credentials: true
   })
 
