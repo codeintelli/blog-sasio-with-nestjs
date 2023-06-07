@@ -1,0 +1,37 @@
+<> auth
+    -> user register
+    -> user login
+    -> resetpassword
+    -> logout
+
+
+<> user
+    -> get profile
+    -> single user
+    -> get user
+    -> delete user
+    -> active user
+    -> change password
+    -> remove user
+    -> edit user
+    -> update profile
+    -> upload profile
+
+
+<> blog
+    -> add blog
+    -> delete blog
+    -> get blog
+    -> update blog
+    -> single blog
+    -> comment blog
+    -> delet comment
+    -> get comment
+
+
+<> category
+    -> add category
+    -> update category
+    -> get catgehory
+    -> delete category
+    -> single category

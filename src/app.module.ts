@@ -10,6 +10,8 @@ import { AuthModule } from './Modules/auth/auth.module';
 import { UserModule } from './Modules/user/user.module';
 import { CommonModule } from './common/common.module';
 import { AppService } from './app.service';
+import { CategoryModule } from './Modules/category/category.module';
+import { BlogModule } from './Modules/blog/blog.module';
 @Module({
   imports: [
     // * globally configuration get enviornment variable
@@ -41,7 +43,9 @@ import { AppService } from './app.service';
     UserModule,
     // HelperModule,
     // * common module configure common service to call every file
-    CommonModule
+    CommonModule,
+    CategoryModule,
+    BlogModule
   ],
   controllers: [AppController],
   providers: [AppService],

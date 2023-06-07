@@ -26,4 +26,6 @@ export class Attachment {
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
     user: User;
 }
+
+
 export const AttachmentSchema = SchemaFactory.createForClass(Attachment);
