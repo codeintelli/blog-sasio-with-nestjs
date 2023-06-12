@@ -48,7 +48,7 @@ export class CategoryController {
 
     @Delete('remove/:catId')
     @UseGuards(IsAuthenticated)
-    async doRemoveCategory(@Req() req: RequestInterface, @Res() res: Response, @Param('userId') param) {
+    async doRemoveCategory(@Req() req: RequestInterface, @Res() res: Response, @Param('catId') param) {
         try {
             let data = await this.categoryService.removeCategory(req.user.id, param);
             return this.responseService.sendSuccessResponse(res, data, 'delete');

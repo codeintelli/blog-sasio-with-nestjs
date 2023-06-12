@@ -6,11 +6,15 @@ import { BlogSchema } from 'src/Models/blog.schema';
 import { CommonModule } from 'src/common/common.module';
 import { ContextService } from 'src/common/services/context.service';
 import { BlogCommentSchema } from 'src/Models/blogComment.schema';
+import { UserService } from '../user/services/user.service';
+import { UserSchema } from 'src/Models/user.schema';
+import { AttachmentSchema } from 'src/Models/attachment.schema';
+import { BlogMetaSchema } from 'src/Models/blogMeta.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'Blog', schema: BlogSchema }, { name: 'BlogComment', schema: BlogCommentSchema }]), CommonModule],
+  imports: [MongooseModule.forFeature([{ name: 'Blog', schema: BlogSchema }, { name: 'BlogMeta', schema: BlogMetaSchema }, { name: 'BlogComment', schema: BlogCommentSchema }, { name: 'User', schema: UserSchema }, { name: 'Attachment', schema: AttachmentSchema }]), CommonModule],
   controllers: [BlogController],
-  providers: [BlogService, ContextService],
-  exports: [ContextService]
+  providers: [BlogService, ContextService, UserService],
+  exports: [ContextService, UserService]
 })
 export class BlogModule { }

@@ -15,16 +15,18 @@ export class BlogController {
 
     @Post('/add')
     @UseGuards(IsAuthenticated)
-    async doAddBlog(@Req() req: RequestInterface, @Res() res: Response) {
+    @UseInterceptors(FileInterceptor('blogImg'))
+    async doAddBlog(@Req() req: RequestInterface, @Body() payload, @Res() res: Response, @UploadedFile() file) {
         try {
             console.log(req.user.id)
-            debugger;
-            let data = await this.blogService.addBlog(req.user.id);
+            let folder = "blogfront"
+            let data = await this.blogService.addBlog(req.user.id, payload, folder, file);
             return this.responseService.sendSuccessResponse(res, data, 'post', "blog add succesfully");
         } catch (err) {
             return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
     // @Get('profile')
     // @UseGuards(IsAuthenticated)
     // async doGetUserProfile(@Req() req: RequestInterface, @Res() res: Response) {
