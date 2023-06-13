@@ -22,11 +22,12 @@ export class BlogService {
         payload.title = payload.title.toLowerCase();
         let saveBlog = new this.blogModel(payload);
         let storeResult = await saveBlog.save();
-
+        let storedData;
         if (file) {
             let result = await this.awsService.uploadFile(folder, userId, file);
 
             let saveBlogMeta = new this.blogMetaModel()
+
             saveBlogMeta.frontImage = {
                 filename: file.originalname,
                 fileType: file.mimetype,
@@ -37,9 +38,43 @@ export class BlogService {
             }
             saveBlogMeta.user = userId;
             saveBlogMeta.blog = storeResult;
-            let storedData = await saveBlogMeta.save()
-            // return storedData;
+            storedData = await saveBlogMeta.save();
         }
-        return storeResult
+        return { storeResult, storedData }
+    }
+
+    public async updateBlog(userId, reqBody) {
+        await this.userService.doCheckUser(userId);
+        let editResult = await this.blogModel.findByIdAndUpdate(reqBody.blogId, reqBody, { new: true });
+        return editResult;
+    }
+
+    public async deleteBlog(userId, reqBody) {
+        await this.userService.doCheckUser(userId);
+        await this.blogModel.findByIdAndUpdate(reqBody.blogId, { isActive: false }, { new: true });
+        return true;
+    }
+
+    public async removeBlog(userId, param) {
+        await this.userService.doCheckUser(userId);
+        await this.blogModel.findByIdAndDelete(param);
+        return true;
+    }
+
+    public async listBlog() {
+        let getResult = await this.blogModel.find({ isActive: true }).sort('desc');
+        return getResult;
+    }
+
+    public async singleBlog(userId, param) {
+        await this.userService.doCheckUser(userId);
+        let getBlogData = await this.blogModel.findById(param);
+        return getBlogData;
+    }
+
+    public async toggleBlogStatus(userId, status, param) {
+        await this.userService.doCheckUser(userId);
+        let data = await this.blogModel.findByIdAndUpdate(param, status, { new: true });
+        return data;
     }
 }

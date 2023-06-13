@@ -16,7 +16,7 @@ export class BlogController {
     @Post('/add')
     @UseGuards(IsAuthenticated)
     @UseInterceptors(FileInterceptor('blogImg'))
-    async doAddBlog(@Req() req: RequestInterface, @Body() payload, @Res() res: Response, @UploadedFile() file) {
+    async doAddBlog(@Req() req, @Body() payload, @Res() res, @UploadedFile() file) {
         try {
             console.log(req.user.id)
             let folder = "blogfront"
@@ -27,100 +27,74 @@ export class BlogController {
         }
     }
 
-    // @Get('profile')
-    // @UseGuards(IsAuthenticated)
-    // async doGetUserProfile(@Req() req: RequestInterface, @Res() res: Response) {
-    //     try {
-    //         console.log(req.user.id)
-    //         debugger;
-    //         let data = await this.blogService.userProfile(req.user.id);
-    //         return this.responseService.sendSuccessResponse(res, data, 'get', "profile get succesfully");
-    //     } catch (err) {
-    //         return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
 
-    // @Put('editprofile')
-    // @UseGuards(IsAuthenticated)
-    // async doUpdateUserProfile(@Req() req: RequestInterface, @Res() res: Response, @Body() editedData) {
-    //     try {
-    //         let data = await this.blogService.editProfile(req.user.id, editedData);
-    //         return this.responseService.sendSuccessResponse(res, data, 'put');
-    //     } catch (err) {
-    //         return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
+    @Put('/edit')
+    @UseGuards(IsAuthenticated)
+    async doUpdateBlog(@Req() req, @Res() res, @Body() request) {
+        try {
+            let data = await this.blogService.updateBlog(req.user.id, request);
+            return this.responseService.sendSuccessResponse(res, data, 'put', 'blog edit successfully');
+        } catch (err) {
+            return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
-    // @Put('delete')
-    // @UseGuards(IsAuthenticated)
-    // async doDeleteUserProfile(@Req() req: RequestInterface, @Res() res: Response) {
-    //     try {
-    //         let data = await this.blogService.softDeleteUser(req.user.id);
-    //         return this.responseService.sendSuccessResponse(res, data, 'put', "delete user");
-    //     } catch (err) {
-    //         return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
+    @Put('delete')
+    @UseGuards(IsAuthenticated)
+    async doDeletBlog(@Req() req, @Res() res: Response, @Body() request) {
+        try {
+            let data = await this.blogService.deleteBlog(req.user.id, request);
+            return this.responseService.sendSuccessResponse(res, data, 'put', "delete blog");
+        } catch (err) {
+            return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
-    // @Delete('remove/:userId')
-    // @UseGuards(IsAuthenticated)
-    // async doRemoveUserProfile(@Req() req: RequestInterface, @Res() res: Response, @Param('userId') param) {
-    //     try {
-    //         let data = await this.blogService.removeUser(req.user.id, param);
-    //         return this.responseService.sendSuccessResponse(res, data, 'delete');
-    //     } catch (err) {
-    //         return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
+    @Delete('remove/:blogId')
+    @UseGuards(IsAuthenticated)
+    async doRemoveUserProfile(@Req() req, @Res() res, @Param('blogId') param) {
+        try {
+            let data = await this.blogService.removeBlog(req.user.id, param);
+            return this.responseService.sendSuccessResponse(res, data, 'delete');
+        } catch (err) {
+            return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
-    // @Get('list')
-    // @UseGuards(IsAuthenticated)
-    // async doGetUserList(@Res() res: Response) {
-    //     try {
-    //         let data = await this.blogService.listUser();
-    //         return this.responseService.sendSuccessResponse(res, data, 'get', "all user data retrived");
-    //     } catch (err) {
-    //         return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
+    @Get('list')
+    @UseGuards(IsAuthenticated)
+    async doGetBlogList(@Res() res: Response) {
+        try {
+            let data = await this.blogService.listBlog();
+            return this.responseService.sendSuccessResponse(res, data, 'get', "all blogs are retrived");
+        } catch (err) {
+            return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
-    // @Get('single/:id')
-    // @UseGuards(IsAuthenticated)
-    // async doGetSingleUser(@Req() req: RequestInterface, @Res() res: Response, @Param('id') param) {
-    //     try {
-    //         let data = await this.blogService.getUser(req.user.id, param);
-    //         return this.responseService.sendSuccessResponse(res, data, 'get', "single data retrive successfully");
-    //     } catch (err) {
-    //         return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
+    @Get('single/:id')
+    @UseGuards(IsAuthenticated)
+    async doGetSingleUser(@Req() req: RequestInterface, @Res() res: Response, @Param('id') param) {
+        try {
+            let data = await this.blogService.singleBlog(req.user.id, param);
+            return this.responseService.sendSuccessResponse(res, data, 'get', "single blog retrive successfully");
+        } catch (err) {
+            return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
-    // @Post('upload-profile')
-    // @UseGuards(IsAuthenticated)
-    // @UseInterceptors(FileInterceptor('profileImg'))
-    // async doUploadProfileUser(@Req() req: Request, @Res() res: Response, @UploadedFile() file) {
-    //     try {
-    //         let folder = "profile"
-    //         // @ts-ignore
-    //         let data = await this.blogService.uploadProfileImage(req.user.id, folder, file);
-    //         return this.responseService.sendSuccessResponse(res, data, 'post', "user attachment added sucessfully");
-    //     } catch (err) {
-    //         console.log(err,)
-    //         return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
 
-    // @Put('toggle-status/:id')
-    // @UseGuards(IsAuthenticated)
-    // async doToggleUserStatus(@Req() req: Request, @Res() res: Response, @Body() status, @Param('id') param) {
-    //     try {
-    //         // @ts-ignore
-    //         let data = await this.blogService.toggleUserStatus(req.user.id, status, param);
-    //         return this.responseService.sendSuccessResponse(res, data, 'put', "your status change successfully");
-    //     } catch (err) {
-    //         return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
+    @Put('toggle-status/:id')
+    @UseGuards(IsAuthenticated)
+    async doToggleUserStatus(@Req() req: Request, @Res() res: Response, @Body() status, @Param('id') param) {
+        try {
+            // @ts-ignore
+            let data = await this.blogService.toggleBlogStatus(req.user.id, status, param);
+            return this.responseService.sendSuccessResponse(res, data, 'put', "blog status updated successfully");
+        } catch (err) {
+            return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
 
 }   
