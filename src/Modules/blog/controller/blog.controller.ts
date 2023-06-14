@@ -96,5 +96,28 @@ export class BlogController {
         }
     }
 
+    @Post('comment/add')
+    @UseGuards(IsAuthenticated)
+    async doAddBlogComment(@Req() req: Request, @Res() res: Response, @Body() comment) {
+        try {
+            // @ts-ignore
+            let data = await this.blogService.addBlogComment(req.user.id, comment);
+            return this.responseService.sendSuccessResponse(res, data, 'post', "blog comment add successfully");
+        } catch (err) {
+            return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Get('comment/get/:id')
+    @UseGuards(IsAuthenticated)
+    async doGetBlogComment(@Req() req: Request, @Res() res: Response, @Param('id') param) {
+        try {
+            // @ts-ignore
+            let data = await this.blogService.getBlogComment(req.user.id, param);
+            return this.responseService.sendSuccessResponse(res, data, 'get', "blog comment get successfully");
+        } catch (err) {
+            return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
 }   

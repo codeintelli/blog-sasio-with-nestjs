@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Param } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { blogDocument } from 'src/Models/blog.schema';
@@ -6,12 +6,15 @@ import { ContextService } from 'src/common/services/context.service';
 import { UserService } from '../user/services/user.service';
 import { AwsService } from 'src/common/services/aws.service';
 import { BlogMetaDocument } from 'src/Models/blogMeta.schema';
+import { blogCommentDocument } from 'src/Models/blogComment.schema';
+import { Blog } from '../../Models/blog.schema';
 
 @Injectable()
 export class BlogService {
     constructor(
         @InjectModel('Blog') private readonly blogModel: Model<blogDocument>,
         @InjectModel('BlogMeta') private readonly blogMetaModel: Model<BlogMetaDocument>,
+        @InjectModel('BlogComment') private readonly blogCommentModel: Model<blogCommentDocument>,
         private readonly message: ContextService,
         private readonly userService: UserService,
         private readonly awsService: AwsService,
@@ -76,5 +79,20 @@ export class BlogService {
         await this.userService.doCheckUser(userId);
         let data = await this.blogModel.findByIdAndUpdate(param, status, { new: true });
         return data;
+    }
+
+    public async addBlogComment(userId, payload) {
+        await this.userService.doCheckUser(userId);
+        let comment = await new this.blogCommentModel(payload);
+        comment.blog = payload.blog
+        comment.user = userId;
+        let result = await comment.save()
+        return result;
+    }
+
+    public async getBlogComment(userId, Param) {
+        await this.userService.doCheckUser(userId);
+        let result = await this.blogCommentModel.find({ where: { blog: Param } }).sort('desc')
+        return result
     }
 }
