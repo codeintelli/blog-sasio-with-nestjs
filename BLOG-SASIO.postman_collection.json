@@ -1,0 +1,2156 @@
+{
+	"info": {
+		"_postman_id": "9a730f2c-bc5d-441e-89bb-27babbaa66f1",
+		"name": "BLOG-SASIO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"firstname\":\"{{$randomFirstName}}\",\n \"lastname\":\"{{$randomLastName}}\",\n \"email\":\"q@yopmail.com\",\n \"password\":\"User@1234\",\n \"confirmPassword\":\"User@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2029/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"firstname\":\"{{$randomFirstName}}\",\n \"lastname\":\"{{$randomLastName}}\",\n \"email\":\"q@yopmail.com\",\n \"password\":\"User@1234\",\n \"confirmPassword\":\"User@1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:2029/api/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "414"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19e-PreD8bA8C/32/dRIClkFbpmEHC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Jun 2023 04:58:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"firstname\": \"London\",\n        \"lastname\": \"Hilpert\",\n        \"email\": \"q@yopmail.com\",\n        \"password\": \"$2b$10$Z2RKHIEPZZhxCBDp.yY1IOJIVtBfKpk.QN.Ees5107f2jbCP.fYJm\",\n        \"isActive\": true,\n        \"isOnline\": false,\n        \"isVerified\": false,\n        \"role\": \"USER\",\n        \"isDeleted\": false,\n        \"_id\": \"648948dbeac148d2029cea66\",\n        \"createdAt\": \"2023-06-14T04:58:03.031Z\",\n        \"updatedAt\": \"2023-06-14T04:58:03.031Z\",\n        \"__v\": 0\n    },\n    \"message\": \"🥳 User Registered Successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"usernew@yopmail.com\",\n    \"password\": \"User@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2029/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"usernew@yopmail.com\",\n    \"password\": \"User@1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:2029/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "563"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"233-wQdEagVt6H3nvKt1niJG2zo2O0M\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Jun 2023 04:58:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"loginData\": {\n            \"isDeleted\": false,\n            \"_id\": \"64798b11d6a581d7d8eed034\",\n            \"firstname\": \"Blaise\",\n            \"lastname\": \"Hoppe\",\n            \"email\": \"usernew@yopmail.com\",\n            \"isActive\": true,\n            \"isOnline\": false,\n            \"isVerified\": false,\n            \"role\": \"USER\",\n            \"createdAt\": \"2023-06-02T06:24:17.301Z\",\n            \"updatedAt\": \"2023-06-02T06:24:17.301Z\",\n            \"__v\": 0\n        },\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2NzE4Njk4LCJleHAiOjE2ODY5Nzc4OTh9.pyNMvrFC2WJYdqAAeC0x_Je2Msnru5Z85X4YT0aArMM\"\n    },\n    \"message\": \"🥳 Login Successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "add category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2MTI4NjU3LCJleHAiOjE2ODYzODc4NTd9.X5ja6GVDJ80Hd-FwlnovQKHonq47jX3erYV_LtBppL8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"catName\":\"nectmar\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2029/api/v1/category/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"catName\":\"nectmar\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:2029/api/v1/category/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "229"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e5-1i5klQ73jdzBBZA8d30n12fJkWo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Jun 2023 09:34:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"categoryName\": \"nectmar\",\n        \"isDeleted\": false,\n        \"_id\": \"64804f0c2263c40b7bb0374a\",\n        \"createdAt\": \"2023-06-07T09:34:04.567Z\",\n        \"updatedAt\": \"2023-06-07T09:34:04.567Z\",\n        \"__v\": 0\n    },\n    \"message\": \"🤩 category add succesfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "edit catgeory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2MTI4NjU3LCJleHAiOjE2ODYzODc4NTd9.X5ja6GVDJ80Hd-FwlnovQKHonq47jX3erYV_LtBppL8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"catId\":\"64804f0c2263c40b7bb0374a\",\n    \"catName\":\"gysa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2029/api/v1/category/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "edit catgeory",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"catId\":\"64804f0c2263c40b7bb0374a\",\n    \"catName\":\"gysa\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:2029/api/v1/category/edit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "228"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e4-AN3uZxxMD+ysstL3V1oHvAXinRI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Jun 2023 09:59:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"64804f0c2263c40b7bb0374a\",\n        \"categoryName\": \"gysa\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2023-06-07T09:34:04.567Z\",\n        \"updatedAt\": \"2023-06-07T09:59:25.118Z\",\n        \"__v\": 0\n    },\n    \"message\": \"🤩 category edit successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2MTI4NjU3LCJleHAiOjE2ODYzODc4NTd9.X5ja6GVDJ80Hd-FwlnovQKHonq47jX3erYV_LtBppL8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"catId\":\"64804f0c2263c40b7bb0374a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2029/api/v1/category/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete category",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"catId\":\"64804f0c2263c40b7bb0374a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:2029/api/v1/category/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-NPcX7wxrfZrS3y/hL/BBhpZ+NNI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Jun 2023 10:46:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": true,\n    \"message\": \"🤩 delete category\"\n}"
+						}
+					]
+				},
+				{
+					"name": "remove",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2MTI4NjU3LCJleHAiOjE2ODYzODc4NTd9.X5ja6GVDJ80Hd-FwlnovQKHonq47jX3erYV_LtBppL8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2029/api/v1/category/remove/64804f0c2263c40b7bb0374a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"remove",
+								"64804f0c2263c40b7bb0374a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "remove",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:2029/api/v1/category/remove/64804f0c2263c40b7bb0374a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"remove",
+										"64804f0c2263c40b7bb0374a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-pr1XjgcJnHHqkX/NK3qAxXT6w10\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Jun 2023 10:51:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": true,\n    \"message\": \"💔 Data Permenantly Deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "list category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2MTI4NjU3LCJleHAiOjE2ODYzODc4NTd9.X5ja6GVDJ80Hd-FwlnovQKHonq47jX3erYV_LtBppL8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2029/api/v1/category/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:2029/api/v1/category/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f9-/0p09Ndcnsf+esFuUYm6AobBE3U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Jun 2023 10:59:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"6480631fe2260b58ae567148\",\n            \"categoryName\": \"nectmar\",\n            \"isActive\": true,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-07T10:59:43.707Z\",\n            \"updatedAt\": \"2023-06-07T10:59:43.707Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"🤩 all category data retrived\"\n}"
+						}
+					]
+				},
+				{
+					"name": "single",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2MTI4NjU3LCJleHAiOjE2ODYzODc4NTd9.X5ja6GVDJ80Hd-FwlnovQKHonq47jX3erYV_LtBppL8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2029/api/v1/category/single/6480631fe2260b58ae567148",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"single",
+								"6480631fe2260b58ae567148"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "single",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:2029/api/v1/category/single/6480631fe2260b58ae567148",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"single",
+										"6480631fe2260b58ae567148"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fd-sC9iIQNY2o5id2PWxWNExcmzVmw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Jun 2023 11:02:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"6480631fe2260b58ae567148\",\n        \"categoryName\": \"nectmar\",\n        \"isActive\": true,\n        \"isDeleted\": false,\n        \"createdAt\": \"2023-06-07T10:59:43.707Z\",\n        \"updatedAt\": \"2023-06-07T10:59:43.707Z\",\n        \"__v\": 0\n    },\n    \"message\": \"🤩 single data retrive successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "toggle category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2MTI4NjU3LCJleHAiOjE2ODYzODc4NTd9.X5ja6GVDJ80Hd-FwlnovQKHonq47jX3erYV_LtBppL8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isActive\":\"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2029/api/v1/category/toggle-status/6480631fe2260b58ae567148",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"toggle-status",
+								"6480631fe2260b58ae567148"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "toggle category",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isActive\":\"true\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:2029/api/v1/category/toggle-status/6480631fe2260b58ae567148",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"toggle-status",
+										"6480631fe2260b58ae567148"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "252"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fc-jXmtesJrxvlPRGYc5baq0B65LLI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Jun 2023 11:28:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"6480631fe2260b58ae567148\",\n        \"categoryName\": \"nectmar\",\n        \"isActive\": true,\n        \"isDeleted\": false,\n        \"createdAt\": \"2023-06-07T10:59:43.707Z\",\n        \"updatedAt\": \"2023-06-07T11:28:17.933Z\",\n        \"__v\": 0\n    },\n    \"message\": \"🤩 your status change successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
+		},
+		{
+			"name": "BLOG",
+			"item": [
+				{
+					"name": "add blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2NTcyOTE1LCJleHAiOjE2ODY4MzIxMTV9.-JTFxaN-RulsFsoc96IVVG6fk8Vfy0vcKWFu6GT8p1E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "blogImg",
+									"type": "file",
+									"src": "/home/p21_0114/Downloads/images (2).jpeg"
+								},
+								{
+									"key": "title",
+									"value": "{{$randomFirstName}}",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "blog is new sysaio",
+									"type": "text"
+								},
+								{
+									"key": "quotes",
+									"value": "opmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/blog/add",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"blog",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add blog",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "blogImg",
+											"type": "file",
+											"src": "/home/p21_0114/Downloads/images (2).jpeg"
+										},
+										{
+											"key": "title",
+											"value": "{{$randomFirstName}}",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "blog is new sysaio",
+											"type": "text"
+										},
+										{
+											"key": "quotes",
+											"value": "opmail.com",
+											"type": "text"
+										},
+										{
+											"key": "tags",
+											"value": "new",
+											"type": "text"
+										},
+										{
+											"key": "\"confirmPassword\"",
+											"value": "\"User@1234\"",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "}",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:2029/api/v1/blog/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1071"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42f-I50ArnAESaNK8SN6jeZAt1IxoDo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Jun 2023 04:40:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"blog\": {\n            \"title\": \"novella\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"_id\": \"6487f3415e47bb0769a20468\",\n            \"createdAt\": \"2023-06-13T04:40:33.229Z\",\n            \"updatedAt\": \"2023-06-13T04:40:33.229Z\",\n            \"__v\": 0\n        },\n        \"frontImage\": {\n            \"frontImage\": {\n                \"url\": \"https://boileplateprofile.s3.amazonaws.com/blogfront/64798b11d6a581d7d8eed034/images%20%282%29.jpeg\",\n                \"location\": \"boileplateprofile\",\n                \"fileType\": \"image/jpeg\",\n                \"key\": \"blogfront/64798b11d6a581d7d8eed034/images (2).jpeg\",\n                \"filename\": \"images (2).jpeg\",\n                \"size\": \"4983\"\n            },\n            \"isDeleted\": false,\n            \"_id\": \"6487f3425e47bb0769a2046a\",\n            \"user\": \"64798b11d6a581d7d8eed034\",\n            \"blog\": {\n                \"title\": \"novella\",\n                \"description\": \"blog is new sysaio\",\n                \"quotes\": \"opmail.com\",\n                \"tags\": [\n                    \"new\"\n                ],\n                \"isActive\": true,\n                \"isVerified\": false,\n                \"isDeleted\": false,\n                \"_id\": \"6487f3415e47bb0769a20468\",\n                \"createdAt\": \"2023-06-13T04:40:33.229Z\",\n                \"updatedAt\": \"2023-06-13T04:40:33.229Z\",\n                \"__v\": 0\n            },\n            \"createdAt\": \"2023-06-13T04:40:34.485Z\",\n            \"updatedAt\": \"2023-06-13T04:40:34.485Z\",\n            \"__v\": 0\n        }\n    },\n    \"message\": \"🤩 blog add succesfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "edit blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2NTcyOTE1LCJleHAiOjE2ODY4MzIxMTV9.-JTFxaN-RulsFsoc96IVVG6fk8Vfy0vcKWFu6GT8p1E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"blogId\":\"6487f3415e47bb0769a20468\",\n    \"title\": \"{{$randomFirstName}}\",\n    \"description\": \"{{$randomJobDescriptor}}\",\n    \"quotes\": \"{{$randomLoremWords}}\",\n    \"tags\": \"{{$randomLoremSlug}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2029/api/v1/blog/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "edit blog",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n    \"blogId\":\"6487f3415e47bb0769a20468\",\n    \"title\": \"{{$randomFirstName}}\",\n    \"description\": \"{{$randomJobDescriptor}}\",\n    \"quotes\": \"{{$randomLoremWords}}\",\n    \"tags\": \"{{$randomLoremSlug}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:2029/api/v1/blog/edit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "339"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"153-j6o+RXZNUf2NZ2LLFAgukC6OBuE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Jun 2023 04:54:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"6487f3415e47bb0769a20468\",\n        \"title\": \"Clarissa\",\n        \"description\": \"National\",\n        \"quotes\": \"et quo dignissimos\",\n        \"tags\": [\n            \"harum-dolorem-ad\"\n        ],\n        \"isActive\": true,\n        \"isVerified\": false,\n        \"isDeleted\": false,\n        \"createdAt\": \"2023-06-13T04:40:33.229Z\",\n        \"updatedAt\": \"2023-06-13T04:53:45.301Z\",\n        \"__v\": 0\n    },\n    \"message\": \"🤩 blog edit successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2NTcyOTE1LCJleHAiOjE2ODY4MzIxMTV9.-JTFxaN-RulsFsoc96IVVG6fk8Vfy0vcKWFu6GT8p1E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"blogId\":\"648711fcb5bd3981a8a7c266\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2029/api/v1/blog/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete blog",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"blogId\":\"648711fcb5bd3981a8a7c266\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:2029/api/v1/blog/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-Zq3U9r2+ExE1ocLsWnZcdUE06BM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Jun 2023 05:01:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": true,\n    \"message\": \"🤩 delete blog\"\n}"
+						}
+					]
+				},
+				{
+					"name": "remove blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2NTcyOTE1LCJleHAiOjE2ODY4MzIxMTV9.-JTFxaN-RulsFsoc96IVVG6fk8Vfy0vcKWFu6GT8p1E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2029/api/v1/blog/remove/648711fcb5bd3981a8a7c266",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"remove",
+								"648711fcb5bd3981a8a7c266"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "remove blog",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:2029/api/v1/blog/remove/648711fcb5bd3981a8a7c266",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"remove",
+										"648711fcb5bd3981a8a7c266"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-pr1XjgcJnHHqkX/NK3qAxXT6w10\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Jun 2023 05:06:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": true,\n    \"message\": \"💔 Data Permenantly Deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "list blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2NTcyOTE1LCJleHAiOjE2ODY4MzIxMTV9.-JTFxaN-RulsFsoc96IVVG6fk8Vfy0vcKWFu6GT8p1E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2029/api/v1/blog/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list blog",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:2029/api/v1/blog/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4847"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12ef-iwrZobxexiWA8lnPwW+NbqM4vYc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Jun 2023 05:14:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"648711870271101e9822f689\",\n            \"title\": \"cory\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"[\\\"first\\\"]\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-12T12:37:27.986Z\",\n            \"updatedAt\": \"2023-06-12T12:37:27.986Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487ed98f8c11c4c080e3235\",\n            \"title\": \"beaulah\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"[\\\"first\\\"]\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:16:24.073Z\",\n            \"updatedAt\": \"2023-06-13T04:16:24.073Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487ee4e971f39d742f442ec\",\n            \"title\": \"lucie\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"[\\\"first\\\"]\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:19:26.279Z\",\n            \"updatedAt\": \"2023-06-13T04:19:26.279Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487ee82854f05d954e6f78f\",\n            \"title\": \"rodger\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"[\\\"first\\\"]\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:20:18.148Z\",\n            \"updatedAt\": \"2023-06-13T04:20:18.148Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487eeec433e34e21d9308b8\",\n            \"title\": \"caesar\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:22:04.949Z\",\n            \"updatedAt\": \"2023-06-13T04:22:04.949Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487ef1adf915148395e2177\",\n            \"title\": \"lavada\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:22:50.398Z\",\n            \"updatedAt\": \"2023-06-13T04:22:50.398Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487ef531207730b67a9fd7c\",\n            \"title\": \"ruben\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:23:47.966Z\",\n            \"updatedAt\": \"2023-06-13T04:23:47.966Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487ef88e75f262624c6ff58\",\n            \"title\": \"ivy\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:24:40.505Z\",\n            \"updatedAt\": \"2023-06-13T04:24:40.505Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487f0d99a2c799a3cb60453\",\n            \"title\": \"maximillia\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:30:17.702Z\",\n            \"updatedAt\": \"2023-06-13T04:30:17.702Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487f13c2b1ec52a9b445459\",\n            \"title\": \"katelynn\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:31:56.717Z\",\n            \"updatedAt\": \"2023-06-13T04:31:56.717Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487f1a32acc21e7c31e80ca\",\n            \"title\": \"friedrich\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:33:39.703Z\",\n            \"updatedAt\": \"2023-06-13T04:33:39.703Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487f2212acc21e7c31e80cf\",\n            \"title\": \"christophe\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:35:45.897Z\",\n            \"updatedAt\": \"2023-06-13T04:35:45.897Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487f26f35f3a6e210b98761\",\n            \"title\": \"haven\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:37:03.886Z\",\n            \"updatedAt\": \"2023-06-13T04:37:03.886Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487f2cd53bdae5f839b3840\",\n            \"title\": \"reyna\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:38:37.069Z\",\n            \"updatedAt\": \"2023-06-13T04:38:37.069Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487f2dd5cf70cc7c936b438\",\n            \"title\": \"ian\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:38:53.834Z\",\n            \"updatedAt\": \"2023-06-13T04:38:53.834Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487f2fea2b1d402bc5f0058\",\n            \"title\": \"houston\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:39:26.764Z\",\n            \"updatedAt\": \"2023-06-13T04:39:26.764Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487f3375e47bb0769a20465\",\n            \"title\": \"alfred\",\n            \"description\": \"blog is new sysaio\",\n            \"quotes\": \"opmail.com\",\n            \"tags\": [\n                \"new\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:40:23.396Z\",\n            \"updatedAt\": \"2023-06-13T04:40:23.396Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6487f3415e47bb0769a20468\",\n            \"title\": \"Clarissa\",\n            \"description\": \"National\",\n            \"quotes\": \"et quo dignissimos\",\n            \"tags\": [\n                \"harum-dolorem-ad\"\n            ],\n            \"isActive\": true,\n            \"isVerified\": false,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-06-13T04:40:33.229Z\",\n            \"updatedAt\": \"2023-06-13T04:53:45.301Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"🤩 all blogs are retrived\"\n}"
+						}
+					]
+				},
+				{
+					"name": "single blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2NTcyOTE1LCJleHAiOjE2ODY4MzIxMTV9.-JTFxaN-RulsFsoc96IVVG6fk8Vfy0vcKWFu6GT8p1E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2029/api/v1/blog/single/6487ed98f8c11c4c080e3235",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"single",
+								"6487ed98f8c11c4c080e3235"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "single blog",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:2029/api/v1/blog/single/6487ed98f8c11c4c080e3235",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"single",
+										"6487ed98f8c11c4c080e3235"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "345"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"159-QO2JO+wgRCL9g0/wQbKVYyS7R4k\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Jun 2023 05:16:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"6487ed98f8c11c4c080e3235\",\n        \"title\": \"beaulah\",\n        \"description\": \"blog is new sysaio\",\n        \"quotes\": \"opmail.com\",\n        \"tags\": [\n            \"[\\\"first\\\"]\"\n        ],\n        \"isActive\": true,\n        \"isVerified\": false,\n        \"isDeleted\": false,\n        \"createdAt\": \"2023-06-13T04:16:24.073Z\",\n        \"updatedAt\": \"2023-06-13T04:16:24.073Z\",\n        \"__v\": 0\n    },\n    \"message\": \"🤩 single data retrive successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "toggle blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2NTcyOTE1LCJleHAiOjE2ODY4MzIxMTV9.-JTFxaN-RulsFsoc96IVVG6fk8Vfy0vcKWFu6GT8p1E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isActive\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2029/api/v1/blog/toggle-status/6487ed98f8c11c4c080e3235",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2029",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"toggle-status",
+								"6487ed98f8c11c4c080e3235"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "toggle blog",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isActive\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:2029/api/v1/blog/toggle-status/6487ed98f8c11c4c080e3235",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "2029",
+									"path": [
+										"api",
+										"v1",
+										"blog",
+										"toggle-status",
+										"6487ed98f8c11c4c080e3235"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "345"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"159-8dDMq3pKNieQDv/9BDS6BtqbvLU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Jun 2023 05:21:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"6487ed98f8c11c4c080e3235\",\n        \"title\": \"beaulah\",\n        \"description\": \"blog is new sysaio\",\n        \"quotes\": \"opmail.com\",\n        \"tags\": [\n            \"[\\\"first\\\"]\"\n        ],\n        \"isActive\": true,\n        \"isVerified\": false,\n        \"isDeleted\": false,\n        \"createdAt\": \"2023-06-13T04:16:24.073Z\",\n        \"updatedAt\": \"2023-06-13T05:21:42.505Z\",\n        \"__v\": 0\n    },\n    \"message\": \"🤩 blog status updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add blog comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2NzE4Njk4LCJleHAiOjE2ODY5Nzc4OTh9.pyNMvrFC2WJYdqAAeC0x_Je2Msnru5Z85X4YT0aArMM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\":\"This is a secondary heading\",\n    \"blog\":\"6487f3415e47bb0769a20468\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/blog/comment/add",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"blog",
+								"comment",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comment\":\"This is a secondary heading\",\n    \"blog\":\"6487f3415e47bb0769a20468\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/blog/comment/add",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"blog",
+										"comment",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "337"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"151-c2rjqPqKYFtnXSP9vT40LhRPWZY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Jun 2023 05:02:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"comment\": \"This is a secondary heading\",\n        \"isActive\": true,\n        \"blog\": \"6487f3415e47bb0769a20468\",\n        \"isDeleted\": false,\n        \"_id\": \"648949ec05423df5f06c0ea8\",\n        \"user\": \"64798b11d6a581d7d8eed034\",\n        \"createdAt\": \"2023-06-14T05:02:37.893Z\",\n        \"updatedAt\": \"2023-06-14T05:02:37.893Z\",\n        \"__v\": 0\n    },\n    \"message\": \"🤩 blog comment updated successfully\"\n}"
+						},
+						{
+							"name": "add blog comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comment\":\"This is a secondary heading\",\n    \"blog\":\"6487f3415e47bb0769a20468\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/blog/comment/add",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"blog",
+										"comment",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "337"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"151-c2rjqPqKYFtnXSP9vT40LhRPWZY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Jun 2023 05:02:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"comment\": \"This is a secondary heading\",\n        \"isActive\": true,\n        \"blog\": \"6487f3415e47bb0769a20468\",\n        \"isDeleted\": false,\n        \"_id\": \"648949ec05423df5f06c0ea8\",\n        \"user\": \"64798b11d6a581d7d8eed034\",\n        \"createdAt\": \"2023-06-14T05:02:37.893Z\",\n        \"updatedAt\": \"2023-06-14T05:02:37.893Z\",\n        \"__v\": 0\n    },\n    \"message\": \"🤩 blog comment updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWlzZSIsImlkIjoiNjQ3OThiMTFkNmE1ODFkN2Q4ZWVkMDM0IiwiaWF0IjoxNjg2NzE4Njk4LCJleHAiOjE2ODY5Nzc4OTh9.pyNMvrFC2WJYdqAAeC0x_Je2Msnru5Z85X4YT0aArMM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/blog/comment/get/6487f3415e47bb0769a20468",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"blog",
+								"comment",
+								"get",
+								"6487f3415e47bb0769a20468"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/blog/comment/get/6487f3415e47bb0769a20468",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"blog",
+										"comment",
+										"get",
+										"6487f3415e47bb0769a20468"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:2029"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "335"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14f-A345Q5zpMfhdrf5mpEGtcaNpt0c\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Jun 2023 05:09:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"648949ec05423df5f06c0ea8\",\n            \"comment\": \"This is a secondary heading\",\n            \"isActive\": true,\n            \"blog\": \"6487f3415e47bb0769a20468\",\n            \"isDeleted\": false,\n            \"user\": \"64798b11d6a581d7d8eed034\",\n            \"createdAt\": \"2023-06-14T05:02:37.893Z\",\n            \"updatedAt\": \"2023-06-14T05:02:37.893Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"🤩 blog comment get successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "http://localhost:2029/api/v1"
+		}
+	]
+}

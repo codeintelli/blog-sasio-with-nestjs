@@ -24,8 +24,8 @@ export class BlogService {
         await this.userService.doCheckUser(userId)
         payload.title = payload.title.toLowerCase();
         let saveBlog = new this.blogModel(payload);
-        let storeResult = await saveBlog.save();
-        let storedData;
+        let blog = await saveBlog.save();
+        let frontBlogImage;
         if (file) {
             let result = await this.awsService.uploadFile(folder, userId, file);
 
@@ -40,10 +40,10 @@ export class BlogService {
                 url: result.Location,
             }
             saveBlogMeta.user = userId;
-            saveBlogMeta.blog = storeResult;
-            storedData = await saveBlogMeta.save();
+            saveBlogMeta.blog = blog;
+            frontBlogImage = await saveBlogMeta.save();
         }
-        return { storeResult, storedData }
+        return { blog, frontBlogImage }
     }
 
     public async updateBlog(userId, reqBody) {
