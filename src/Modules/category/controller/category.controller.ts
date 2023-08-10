@@ -1,4 +1,4 @@
-import { Body, Controller, Param, Req, Res, Get, Post, HttpStatus, UseGuards, Put, Delete, } from '@nestjs/common';
+import { Body, Controller, Param, Req, Res, Get, Post, HttpStatus, UseGuards, Put, Delete, Patch, } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { ResponseHandlerService } from 'src/common/services/responseHandler.service';
 import { CategoryService } from '../category.service';
@@ -24,31 +24,31 @@ export class CategoryController {
         }
     }
 
-    @Put('/edit')
+    @Put('/edit/:id')
     @UseGuards(IsAuthenticated)
-    async doUpdateCategory(@Req() req: RequestInterface, @Res() res: Response, @Body() request: Request) {
+    async doUpdateCategory(@Req() req: RequestInterface, @Res() res: Response, @Body() request: Request, @Param('id') param) {
         try {
-            let data = await this.categoryService.updateCategory(req.user.id, request);
+            let data = await this.categoryService.updateCategory(req.user.id, request, param);
             return this.responseService.sendSuccessResponse(res, data, 'put', 'category edit successfully');
         } catch (err) {
             return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @Put('/delete')
+    @Patch('/delete/:id')
     @UseGuards(IsAuthenticated)
-    async doDeleteCategory(@Req() req: RequestInterface, @Res() res: Response, @Body() request: Request) {
+    async doDeleteCategory(@Req() req: RequestInterface, @Res() res: Response, @Param('id') param) {
         try {
-            let data = await this.categoryService.deleteCategory(req.user.id, request);
-            return this.responseService.sendSuccessResponse(res, data, 'put', "delete category");
+            let data = await this.categoryService.deleteCategory(req.user.id, param);
+            return this.responseService.sendSuccessResponse(res, data, 'patch', "delete category");
         } catch (err) {
             return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @Delete('remove/:catId')
+    @Delete('remove/:id')
     @UseGuards(IsAuthenticated)
-    async doRemoveCategory(@Req() req: RequestInterface, @Res() res: Response, @Param('catId') param) {
+    async doRemoveCategory(@Req() req: RequestInterface, @Res() res: Response, @Param('id') param) {
         try {
             let data = await this.categoryService.removeCategory(req.user.id, param);
             return this.responseService.sendSuccessResponse(res, data, 'delete');

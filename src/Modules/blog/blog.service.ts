@@ -46,15 +46,15 @@ export class BlogService {
         return { blog, frontBlogImage }
     }
 
-    public async updateBlog(userId, reqBody) {
+    public async updateBlog(userId, reqBody, param) {
         await this.userService.doCheckUser(userId);
-        let editResult = await this.blogModel.findByIdAndUpdate(reqBody.blogId, reqBody, { new: true });
+        let editResult = await this.blogModel.findByIdAndUpdate(param, reqBody, { new: true });
         return editResult;
     }
 
-    public async deleteBlog(userId, reqBody) {
+    public async deleteBlog(userId, param) {
         await this.userService.doCheckUser(userId);
-        await this.blogModel.findByIdAndUpdate(reqBody.blogId, { isActive: false }, { new: true });
+        await this.blogModel.findByIdAndUpdate(param, { isActive: false }, { new: true });
         return true;
     }
 

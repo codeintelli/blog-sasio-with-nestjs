@@ -1,4 +1,4 @@
-import { Body, Controller, Param, Req, Res, Get, Post, Put, Delete, HttpStatus, HttpException, UseGuards, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { Body, Controller, Param, Req, Res, Get, Post, Put, Delete, HttpStatus, HttpException, UseGuards, UseInterceptors, UploadedFile, Patch } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { ResponseHandlerService } from 'src/common/services/responseHandler.service';
 import { BlogService } from '../blog.service';
@@ -28,31 +28,31 @@ export class BlogController {
     }
 
 
-    @Put('/edit')
+    @Put('/edit/:id')
     @UseGuards(IsAuthenticated)
-    async doUpdateBlog(@Req() req, @Res() res, @Body() request) {
+    async doUpdateBlog(@Req() req, @Res() res, @Body() request, @Param('id') param) {
         try {
-            let data = await this.blogService.updateBlog(req.user.id, request);
+            let data = await this.blogService.updateBlog(req.user.id, request, param);
             return this.responseService.sendSuccessResponse(res, data, 'put', 'blog edit successfully');
         } catch (err) {
             return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @Put('delete')
+    @Patch('delete/:id')
     @UseGuards(IsAuthenticated)
-    async doDeletBlog(@Req() req, @Res() res: Response, @Body() request) {
+    async doDeletBlog(@Req() req, @Res() res: Response, @Param('id') param) {
         try {
-            let data = await this.blogService.deleteBlog(req.user.id, request);
-            return this.responseService.sendSuccessResponse(res, data, 'put', "delete blog");
+            let data = await this.blogService.deleteBlog(req.user.id, param);
+            return this.responseService.sendSuccessResponse(res, data, 'patch', "delete blog");
         } catch (err) {
             return this.responseService.sendErrorResponse(res, err.message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @Delete('remove/:blogId')
+    @Delete('remove/:id')
     @UseGuards(IsAuthenticated)
-    async doRemoveUserProfile(@Req() req, @Res() res, @Param('blogId') param) {
+    async doRemoveUserProfile(@Req() req, @Res() res, @Param('id') param) {
         try {
             let data = await this.blogService.removeBlog(req.user.id, param);
             return this.responseService.sendSuccessResponse(res, data, 'delete');

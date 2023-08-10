@@ -27,14 +27,14 @@ export class CategoryService {
         let storeResult = await saveCategory.save();
         return storeResult;
     }
-    public async updateCategory(userId, reqBody) {
+    public async updateCategory(userId, reqBody, param) {
         await this.userService.doCheckUser(userId);
-        let editResult = await this.categoryModel.findByIdAndUpdate(reqBody.catId, { categoryName: reqBody.catName }, { new: true });
+        let editResult = await this.categoryModel.findByIdAndUpdate(param, { categoryName: reqBody.catName }, { new: true });
         return editResult;
     }
-    public async deleteCategory(userId, reqBody) {
+    public async deleteCategory(userId, param) {
         await this.userService.doCheckUser(userId);
-        await this.categoryModel.findByIdAndUpdate(reqBody.catId, { isActive: false }, { new: true });
+        await this.categoryModel.findByIdAndUpdate(param, { isActive: false }, { new: true });
         return true;
     }
 
