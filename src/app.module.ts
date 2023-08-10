@@ -12,6 +12,7 @@ import { CommonModule } from './common/common.module';
 import { AppService } from './app.service';
 import { CategoryModule } from './Modules/category/category.module';
 import { BlogModule } from './Modules/blog/blog.module';
+import { SubcategoryModule } from './Modules/subcategory/subcategory.module';
 @Module({
   imports: [
     // * globally configuration get enviornment variable
@@ -45,7 +46,8 @@ import { BlogModule } from './Modules/blog/blog.module';
     // * common module configure common service to call every file
     CommonModule,
     CategoryModule,
-    BlogModule
+    BlogModule,
+    SubcategoryModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -10,9 +10,6 @@ export class Category {
     @Prop()
     categoryName: string;
 
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Blog' })
-    blog: Blog;
-
     @Prop({ default: true })
     isActive: boolean;
 
